@@ -54,4 +54,5 @@ public class Film {
     public void setLavastaja(String lavastaja) {
         this.lavastaja = lavastaja;
     }
+
 }
