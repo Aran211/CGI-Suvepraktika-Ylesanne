@@ -14,6 +14,7 @@ public class CgiSuvepraktikaYlesanneApplication {
         new Film("Pahad poisid", "Komöödia", "Eesti", 16, "Jancis");
         Film esimeneFilm = new Film("Pahad poisid", "Komöödia", "Inglise", 12, "Kaspar Jancis");
         System.out.println(esimeneFilm.getPealkiri()+ " " + esimeneFilm.getZanr() + " " + esimeneFilm.getKeel() + " " + esimeneFilm.getVanusepiirang() + " " + esimeneFilm.getLavastaja());
+        SpringApplication.run(CgiSuvepraktikaYlesanneApplication.class, args);
 
 
     }
