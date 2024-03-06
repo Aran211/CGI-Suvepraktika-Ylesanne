@@ -1,22 +1,33 @@
 package com.example.cgi_suvepraktika;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
 import java.util.List;
-@Controller
+@Service
 public class soovitusSüsteem {
-
-    @GetMapping("/recommendation")
-    public List <Film> soovitaFilm (List <Film> filmid, String zanr, String keel, int vanusepiirang) {
-        List <Film> soovitatudFilmid = new ArrayList<Film>();
-        for (Film film : filmid) {
-            if (film.getZanr().equals(zanr) && film.getKeel().equals(keel) && film.getVanusepiirang() <= vanusepiirang) {
-                soovitatudFilmid.add(film);
-            }
-        }
-        return soovitatudFilmid;
+    private List<Film> filmid = new ArrayList<>();
+   /* public ResponseEntity<List<Film>> getMovies() {
+        return ResponseEntity.ok(soovitusSüsteem.getFilm());
+    }
+*/
+    public List<Film> getFilm() {
+        return filmid;
     }
 
+    public void addFilm(Film film) {
+        filmid.add(film);
+    }
+
+    public List<Film> getFilteredMovies(String zanr) {
+        List<Film> filteredMovies = new ArrayList<>();
+        for (Film film : filmid) {
+            if (film.getZanr().equals(zanr)) {
+                filteredMovies.add(film);
+            }
+        }
+        return filteredMovies;
+    }
 }

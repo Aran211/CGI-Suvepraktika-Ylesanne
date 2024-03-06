@@ -1,5 +1,8 @@
 package com.example.cgi_suvepraktika;
 
+
+
+
 public class Film {
     private String pealkiri;
     private String zanr;
@@ -54,5 +57,6 @@ public class Film {
     public void setLavastaja(String lavastaja) {
         this.lavastaja = lavastaja;
     }
+
 
 }
