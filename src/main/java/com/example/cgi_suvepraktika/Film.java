@@ -1,14 +1,36 @@
 package com.example.cgi_suvepraktika;
+import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Column;
+//peale persistance-iga pikka katsetamist sain teada, et jakarta.persistence on õige import, kuna see on uusim versioon
 
-
-
-
+@Entity
+@Table(name = "film")
 public class Film {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(name = "pealkiri")
     private String pealkiri;
+
+    @Column(name = "zanr")
     private String zanr;
+
+    @Column(name = "keel")
     private String keel;
+
+    @Column(name = "vanusepiirang")
     private int vanusepiirang;
+
+    @Column(name = "lavastaja")
     private String lavastaja;
+
+    public Film() {}
 
     public Film(String pealkiri, String zanr, String keel, int vanusepiirang, String lavastaja) {
         this.pealkiri = pealkiri;
