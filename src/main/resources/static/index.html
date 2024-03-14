@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Filmi soovitus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Kinokava</h1>
+<p>Siin on filmid, mida soovitame</p>
+<h1>Otsi</h1>
+<ul id="filmList"></ul>
+<form action="/filter" method="post">
+    <label for="genre">Žanr:</label><br>
+    <select id="genre" name="genre"></select><br>
+    <label for="age_limit">Vanusepiirang:</label><br>
+    <input type="text" id="age_limit" name="age_limit"><br>
+    <label for="start_time">Algus alates:</label><br>
+    <input type="text" id="start_time" name="start_time"><br>
+    <label for="language">Keel:</label><br>
+    <select id="language" name="language"></select><br>
+    <input type="submit" value="Filtreeri">
+</form>
+</body>
+<script>
+    function fetchRecommendedFilms(genre) {
+        fetch(`/movies?genre=${genre}`)
+            .then(response => response.json())
+            .then(data => {
+                const recommendedFilmList = document.getElementById('recommendedFilmList');
+                recommendedFilmList.innerHTML = '';  // Clear the list
+
+                data.forEach(film => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = film.pealkiri + ', ' + film.zanr + ', ' + film.keel + ', ' + film.vanusepiirang + ', ' + film.lavastaja;
+                    recommendedFilmList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error(error));
+    }
+
+    // Call the function with the genre you want to recommend
+    fetchRecommendedFilms('Action');
+</script>
+</html>

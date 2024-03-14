@@ -1,12 +1,12 @@
 package com.example.cgi_suvepraktika;
-import jakarta.persistence.*;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
-//peale persistance-iga pikka katsetamist sain teada, et jakarta.persistence on õige import, kuna see on uusim versioon
+
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "film")
@@ -21,6 +21,9 @@ public class Film {
     @Column(name = "zanr")
     private String zanr;
 
+    @Column(name = "algusAeg")
+    private LocalTime algusAeg;
+
     @Column(name = "keel")
     private String keel;
 
@@ -30,7 +33,8 @@ public class Film {
     @Column(name = "lavastaja")
     private String lavastaja;
 
-    public Film() {}
+    public Film() {
+    }
 
     public Film(String pealkiri, String zanr, String keel, int vanusepiirang, String lavastaja) {
         this.pealkiri = pealkiri;
@@ -78,6 +82,14 @@ public class Film {
 
     public void setLavastaja(String lavastaja) {
         this.lavastaja = lavastaja;
+    }
+
+    public LocalTime getAlgusAeg() {
+        return algusAeg;
+    }
+
+    public void setAlgusAeg(LocalTime algusAeg) {
+        this.algusAeg = algusAeg;
     }
 
 
