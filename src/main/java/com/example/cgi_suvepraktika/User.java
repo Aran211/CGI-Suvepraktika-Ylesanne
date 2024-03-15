@@ -1,5 +1,8 @@
 package com.example.cgi_suvepraktika;
 
+// kasutaja klass
+// kasutaja andmete hoidmiseks
+// kasutaja andmete kättesaamiseks ja muutmiseks
 public class User {
     private String username;
     private String password;

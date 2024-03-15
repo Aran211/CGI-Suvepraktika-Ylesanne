@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
 
+//istekohtade andmebaasi tabeli loomine
+//istekohtade klassi atribuudid
 @Entity
 @Table(name = "iste_kohad")
 public class isteKohad {

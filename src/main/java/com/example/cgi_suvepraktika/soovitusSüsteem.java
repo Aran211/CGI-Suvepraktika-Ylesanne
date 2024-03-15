@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.NoSuchElementException;
-
+// SoovitusSüsteem, mis ideaalis peaks soovitama filme kasutajale, kuid hetkel on see lihtsalt filmide lisamiseks ja kuvamiseks
 @SpringBootApplication
 @RestController
 public class soovitusSüsteem {

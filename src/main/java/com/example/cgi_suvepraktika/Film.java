@@ -8,6 +8,8 @@ import jakarta.persistence.Column;
 
 import java.time.LocalTime;
 
+//filmide andmebaasi tabeli loomine
+//filmide klassi atribuudid
 @Entity
 @Table(name = "film")
 public class Film {

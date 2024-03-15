@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.util.Locale;
 import java.util.regex.Pattern;
 
+//  Kasutaja loomine
 @Repository
 public class UserImplementation implements UserRepo {
 

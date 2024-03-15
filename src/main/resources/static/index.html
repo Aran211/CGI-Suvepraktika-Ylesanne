@@ -28,7 +28,7 @@
             .then(response => response.json())
             .then(data => {
                 const recommendedFilmList = document.getElementById('recommendedFilmList');
-                recommendedFilmList.innerHTML = '';  // Clear the list
+                recommendedFilmList.innerHTML = '';
 
                 data.forEach(film => {
                     const listItem = document.createElement('li');
@@ -39,7 +39,6 @@
             .catch(error => console.error(error));
     }
 
-    // Call the function with the genre you want to recommend
     fetchRecommendedFilms('Action');
 </script>
 </html>

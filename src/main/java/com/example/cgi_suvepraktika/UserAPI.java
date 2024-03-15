@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 import java.util.Map;
-
+//kasutaja API
+// võimaldab registreerimist ja sisselogimist
 @RestController
 @RequestMapping("/users")
 public class UserAPI {

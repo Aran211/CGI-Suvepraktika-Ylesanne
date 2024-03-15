@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+//Istekohtade repo interface
 @Repository
 public interface IsteKohadRepository extends JpaRepository<isteKohad, Long> {
     List<isteKohad> findByKasVaba(boolean kasVaba);
